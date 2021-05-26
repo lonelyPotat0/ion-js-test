@@ -62,7 +62,7 @@ let remoteStream;
 clientRemote.ontrack = (track, stream) => {
     if (track.kind === "video") {
         remoteStream = stream;
-        remoteVideo.srcObject = stream;
+        remoteVideo.srcObject = remoteStream;
         remoteVideo.autoplay = true;
     }
 };
