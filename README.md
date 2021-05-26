@@ -11,9 +11,9 @@ serve index.js in public directory with any web server application.</br>
 
 # documentation
 
-<strong>Using js sdk</strong> </br>
+<h3>Using js sdk</h3> </br>
 
-init signal: </br>
+<strong>init signal: </strong></br>
 const signal = new Signal.IonSFUJSONRPCSignal(`ws://server-ip:7000/ws`); </br>
 let clientLocal = new IonSDK.Client(signal);  </br>
 let clientRemote = new IonSDK.Client(signal); </br>
