@@ -26,6 +26,7 @@ signalRemote.onopen = () => clientRemote.join(`room-id`);
 
 <strong>Publishing local stream: </strong></br>
 ```javascript
+const localVideo = document.getElementById("localStream");
 let localStream;
 const start = () => {
     simulcast = false;
@@ -35,12 +36,14 @@ const start = () => {
         audio: true,
     })
         .then((media) => {
-            localStream = media;
-            localVideo.srcObject = localStream; // media;
-            localVideo.autoplay = true;
-            localVideo.controls = true;
-            localVideo.muted = true;
-            clientLocal.publish(media);
+            // display local media on screen;
+                localStream = media;
+                localVideo.srcObject = localStream;
+                localVideo.autoplay = true;
+                localVideo.controls = true;
+                localVideo.muted = true;
+            //  publish to server  
+                clientLocal.publish(media);
         })
         .catch(console.error);
     localDataChannel = clientLocal.createDataChannel("data");
