@@ -11,14 +11,14 @@ serve index.js in public directory with any web server application.</br>
 
 # documentation
 
-using js sdk </br>
+Using js sdk </br>
 
 init signal: </br>
 const signal = new Signal.IonSFUJSONRPCSignal(`ws://server-ip:7000/ws`); </br>
 let clientLocal = new IonSDK.Client(signal);  </br>
 let clientRemote = new IonSDK.Client(signal); </br>
 
-signalLocal.onopen = () => clientLocal.join('room-id'); </br>
-signalRemote.onopen = () => clientRemote.join('room-id');  </br>
-// pul remote and local in the same room to start talking to each other. </br>
+signalLocal.onopen = () => clientLocal.join(`room-id`); </br>
+signalRemote.onopen = () => clientRemote.join(`room-id`);  </br>
+`put remote and local in the same room to start talking to each other.` </br>
 
