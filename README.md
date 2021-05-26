@@ -3,10 +3,10 @@
 <strong>server : </strong></br>
 
 ```bash
+git clone https://github.com/pion/ion-sfu.git
 cd ion-sfu
 docker run -p 7000:7000 -p 5000-5200:5000-5200/udp pionwebrtc/ion-sfu:latest-jsonrpc
 ```
-git clone https://github.com/pion/ion-sfu.git
 
     * Notice: open tcp port 7000 and udp port range 5000-5200.
     * ( 5000 - 5200 = 200 peers can be connected. 200 peers = 100 calls)
