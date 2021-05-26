@@ -23,6 +23,7 @@ signalRemote.onopen = () => clientRemote.join(`room-id`);  </br>
 `put remote and local in the same room to start talking to each other.` </br>
 
 <strong>Publishing local stream: </strong></br>
+<code>
 let localStream;
 const start = () => {
     simulcast = false;
@@ -37,9 +38,9 @@ const start = () => {
             localVideo.autoplay = true;
             localVideo.controls = true;
             localVideo.muted = true;
-            // joinBtns.style.display = "none";
             clientLocal.publish(media);
         })
         .catch(console.error);
     localDataChannel = clientLocal.createDataChannel("data");
 };
+</code>
