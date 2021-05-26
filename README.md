@@ -52,7 +52,6 @@ const start = () => {
                 clientLocal.publish(media);
         })
         .catch(console.error);
-    localDataChannel = clientLocal.createDataChannel("data");
 };
 ```
 <strong>Getting remote stream:</strong>
