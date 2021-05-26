@@ -1,12 +1,13 @@
 # ion-js-test
 
 <strong>server : </strong></br>
-```console
 
+```bash
 git clone https://github.com/pion/ion-sfu.git
 cd ion-sfu
 docker run -p 7000:7000 -p 5000-5200:5000-5200/udp pionwebrtc/ion-sfu:latest-jsonrpc
 ```
+
     * Notice: open tcp port 7000 and udp port 5000-5200. ( 5000 - 5200 = 200 peers can be connected. 200 peers = 100 calls)
 
 <strong>web front-end:</strong></br>
@@ -35,9 +36,9 @@ let localStream;
 const start = () => {
     simulcast = false;
     IonSDK.LocalStream.getUserMedia({
-        resolution: "hd",
+        resolution: "hd", // hd , md ,sd
         simulcast: false,
-        audio: true,
+        audio: true, // stream audio
     })
         .then((media) => {
             // display local media on screen;
