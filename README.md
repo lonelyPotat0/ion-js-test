@@ -21,12 +21,12 @@ let clientRemote = new IonSDK.Client(signal);
 
 signalLocal.onopen = () => clientLocal.join(`room-id`);
 signalRemote.onopen = () => clientRemote.join(`room-id`);  
-`put remote and local in the same room to start talking to each other.`
+// put remote and local in the same room to start talking to each other.
 ```
 
 <strong>Publishing local stream: </strong></br>
 ```javascript
-const localVideo = document.getElementById("localStream");
+const localVideo = document.getElementById("localStream"); // html video tag with id="localStream"
 let localStream;
 const start = () => {
     simulcast = false;
@@ -48,4 +48,17 @@ const start = () => {
         .catch(console.error);
     localDataChannel = clientLocal.createDataChannel("data");
 };
+```
+<strong>Getting remote stream</strong>
+```javascript
+const remoteVideo = document.getElementById("remoteStream"); // html video tag with id="remoteStream"
+let remoteStream;
+clientRemote.ontrack = (track, stream) => {
+    if (track.kind === "video") {
+        remoteStream = stream;
+        remoteVideo.srcObject = stream;
+        remoteVideo.autoplay = true;
+    }
+};
+
 ```
