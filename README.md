@@ -15,7 +15,7 @@ git clone https://github.com/pion/ion-sfu.git
 </br>
 serve index.js in public directory with any web server application.</br>
 
-# documentation
+# Documentation
 
 <h3>Using js sdk</h3> </br>
 
