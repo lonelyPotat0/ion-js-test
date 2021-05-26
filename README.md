@@ -13,7 +13,7 @@ git clone https://github.com/pion/ion-sfu.git
 
 <strong>web front-end:</strong></br>
 </br>
-serve index.js in public directory with any web server application.</br>
+serve index.html in public directory with any web server application.</br>
 
 # Documentation
 
