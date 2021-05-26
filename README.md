@@ -22,3 +22,24 @@ signalLocal.onopen = () => clientLocal.join(`room-id`); </br>
 signalRemote.onopen = () => clientRemote.join(`room-id`);  </br>
 `put remote and local in the same room to start talking to each other.` </br>
 
+<strong>Publishing local stream: </strong></br>
+let localStream;
+const start = () => {
+    simulcast = false;
+    IonSDK.LocalStream.getUserMedia({
+        resolution: "hd",
+        simulcast: false,
+        audio: true,
+    })
+        .then((media) => {
+            localStream = media;
+            localVideo.srcObject = localStream; // media;
+            localVideo.autoplay = true;
+            localVideo.controls = true;
+            localVideo.muted = true;
+            // joinBtns.style.display = "none";
+            clientLocal.publish(media);
+        })
+        .catch(console.error);
+    localDataChannel = clientLocal.createDataChannel("data");
+};
