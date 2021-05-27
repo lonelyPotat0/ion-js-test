@@ -82,5 +82,9 @@ clientRemote.ontrack = (track, stream) => {
         remoteVideo.autoplay = true;
     }
 };
+```
 
+<strong>Stoping stream:</strong>
+```javascript
+    clientLocal.unpublish();
 ```
