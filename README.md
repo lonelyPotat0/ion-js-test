@@ -84,7 +84,7 @@ clientRemote.ontrack = (track, stream) => {
 };
 ```
 
-<strong>Stoping stream:</strong>
+<strong>Stopping stream:</strong>
 ```javascript
     clientLocal.unpublish();
 ```
